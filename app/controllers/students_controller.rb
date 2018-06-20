@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
   end
 
   def update
-    Student.update(params.require(:student))
+    Student.update(params.require(:student).permit(:first_name))
     redirect_to student_path(@student)
   end
   
