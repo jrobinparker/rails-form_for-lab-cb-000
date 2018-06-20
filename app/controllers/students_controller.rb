@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_filter :set_student, only: [:show, :edit]
+  before_filter :set_student, only: [:show, :edit, :update]
 
   
   def show
@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
   end
 
   def update
-    @student = Student.update(params.require(:student).permit(:first_name, :last_name))
+    Student.update(params.require(:student).permit(:first_name, :last_name))
     @student.save 
     redirect_to student_path(@student)
   end
