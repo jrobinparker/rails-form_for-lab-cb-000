@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_filter :set_student, only: [:show, :edit]
+  before_filter :student_params, only: [:create, :update]
   
   def show
   end
@@ -23,6 +24,7 @@ class StudentsController < ApplicationController
   end 
   
   def student_params 
-    params.require(:student).permit(:)
+    params.require(:student).permit(:first_name, :last_name)
+  end 
   
 end
