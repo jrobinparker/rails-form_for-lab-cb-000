@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_filter :set_student, only: [:show, :edit]
-  before_filter :student_params, only: [:create, :update]
+
   
   def show
   end
