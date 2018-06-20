@@ -9,18 +9,18 @@ class SchoolClassesController < ApplicationController
   end
 
   def create
-    @student = Student.new
-    @student.save
-    redirect_to student_path(@student)
+    @school_class = SchoolClass.new
+    @school_class.save
+    redirect_to school_class_path(@school_class)
   end
 
   def edit
   end
 
   def update
-    @student = Student.update
-    @student.save 
-    redirect_to student_path(@student)
+    @school_class = SchoolClass.update
+    @school_class.save 
+    redirect_to school_class_path(@school_class)
   end
   
   private 
@@ -30,7 +30,7 @@ class SchoolClassesController < ApplicationController
   end 
   
   def student_params 
-    params.require(:school_class).permit(:first_name, :last_name)
+    params.require(:school_class).permit(:title, :room_number)
   end 
   
 end
