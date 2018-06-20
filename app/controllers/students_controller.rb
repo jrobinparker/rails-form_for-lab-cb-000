@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new
+    @student.save
     redirect_to student_path(@student)
   end
 
@@ -17,6 +18,9 @@ class StudentsController < ApplicationController
   end
 
   def update
+    @student = Student.update
+    @student.save 
+    redirect_to student_path(@student)
   end
   
   private 
