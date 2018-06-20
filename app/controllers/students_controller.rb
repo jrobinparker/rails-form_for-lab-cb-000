@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
 
   
   def show
+    @student = Student.find(params[:id])
   end
 
   def new
@@ -16,17 +17,13 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @student = Student.find(params[:id])
   end
 
   def update
+    @student = Student.find(params[:id])
     Student.update(params.require(:student).permit(:first_name))
     redirect_to student_path(@student)
   end
-  
-  private 
-  
-  def set_student 
-    @student = Student.find(params[:id])
-  end 
   
 end
