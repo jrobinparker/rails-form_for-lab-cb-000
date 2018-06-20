@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_filter :set_student, only: [:show, :edit]
+  
   def show
   end
 
@@ -13,4 +15,11 @@ class StudentsController < ApplicationController
 
   def update
   end
+  
+  private 
+  
+  def set_student 
+    @student = Student.find(params[:id])
+  end 
+  
 end
