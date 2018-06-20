@@ -18,7 +18,7 @@ class SchoolClassesController < ApplicationController
   end
 
   def update
-    @school_class = SchoolClass.update
+    @school_class = SchoolClass.update(school_class_params)
     @school_class.save 
     redirect_to school_class_path(@school_class)
   end
