@@ -3,11 +3,11 @@
 <%= form_for(@students) do |f| %>
 
   <%= f.label :first_name %>
-  <%= f.
+  <%= f.text_field :first_name %>
   <br>
   
-  <label>Last Name</label>
-  <%= f.text :last_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
   <br>
   
   <%= f.submit %>
